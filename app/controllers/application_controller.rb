@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    @user = User.find(session[:user_id])
+    @user = User.find_by(id: session[:id])
     erb :account
   end
 
@@ -36,8 +36,8 @@ class ApplicationController < Sinatra::Base
   get "/login" do
     erb :login
   end
-  
-   post "/login" do
+
+  post "/login" do
     ##your code here
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
