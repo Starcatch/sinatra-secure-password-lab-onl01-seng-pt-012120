@@ -1,2 +1,2 @@
-class CreateUsers < ActiveRecord::Migration[4.2]  has_secure_password
+class CreateUsers < ActiveRecord::B  has_secure_password
 end
